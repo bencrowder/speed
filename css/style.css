@@ -1,0 +1,229 @@
+/* Speed */
+
+/* This CSS isn't very well organized at the moment */
+
+* { 
+	box-sizing: border-box;
+	-webkit-font-feature-settings: "liga", "dlig", "kern", "tnum", "calt";
+	font-feature-settings: "liga", "dlig", "kern", "tnum", "calt";
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #242f3e;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body > header.initial {
+	color: #fff;
+	margin: 60px auto;
+	width: 300px;
+}
+
+body.paused {
+	background: #243a54;
+}
+
+body.paused section.main {
+	opacity: 0.7;
+}
+
+.metadata {
+	-webkit-user-select: none;
+	margin-bottom: 3em;
+	user-select: none;
+}
+
+.metadata .group + .group {
+	margin-top: 15px;
+}
+
+.metadata .group label {
+	color: #8c9cab;
+	font-size: 1.8em;
+}
+
+body.active .metadata .group label {
+	color: #5f7386;
+}
+
+.metadata .group input[type=text] {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 2.5em;
+	margin-right: 8px;
+	padding: 0;
+	text-align: right;
+	width: 3.2em;
+}
+
+.metadata .group input[type=text]:focus {
+	outline: none;
+}
+
+.metadata .group .value {
+	display: block;
+	font-size: 1.5em;
+	margin-top: 4px;
+	width: 3em;
+}
+
+
+/* Controls */
+.controls {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.initial .controls .button {
+	background: rgb(39, 127, 204);
+	border-radius: 1em;
+	cursor: pointer;
+	font-size: 2em;
+	padding: 7px 12px 8px;
+	text-align: center;
+	width: 100%;
+}
+
+body.active .initial .controls .button {
+	background: #5f7386;
+}
+
+body.active .initial .controls .button:hover {
+	background: #000;
+}
+
+.initials .controls .button:hover {
+	background: hsl(208, 100%, 88%);
+	color: #222;
+}
+
+/* Main area */
+
+body > section.main {
+	background: #fff;
+	display: flex;
+	display: none;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.display {
+	border-bottom: solid 1px #ddd;
+	align-items: center;
+	color: #e2e2e2;
+	display: flex;
+	font-size: 1.3em;
+	font-weight: 300;
+	padding: 7px 50px 10px;
+	text-align: center;
+}
+
+.display #time-left {
+	color: #ccc;
+	flex: 1;
+	text-align: left;
+}
+
+.display #words-status span {
+	color: #ccc;
+	margin-left: 25px;
+}
+
+textarea#content {
+	border: none;
+	color: #333;
+	flex: 1;
+	font-family: Charter;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	margin: 0px auto;
+	max-width: 600px;
+	padding: 40px 50px 50px;
+	resize: none;
+	width: 100%;
+}
+
+textarea#content:focus {
+	outline: none;
+}
+
+section.main .controls {
+	border-top: solid 1px #ddd;
+	padding: 0 35px;
+	position: relative;
+	margin: 30px auto 0;
+	width: 100%;
+}
+
+section.main .controls span {
+	color: hsl(0, 0%, 83%);
+	cursor: pointer;
+	padding: 12px 12px 15px;
+}
+
+section.main .controls span#pause-button {
+	font-size: .8em;
+	flex: 1;
+	text-align: right;
+}
+
+section.main .controls span#pause-button.paused {
+	font-size: 1em;
+	margin-top: -4px;
+}
+
+section.main .controls span#stop-button {
+	bottom: 8px;
+	font-size: 1.9em;
+	padding-bottom: 0;
+	position: absolute;
+}
+
+section.main .controls span:hover {
+	color: #444;
+}
+
+/* Overtime */
+body.overtime section.main {
+	background: #C33333;
+}
+
+body.overtime .display {
+	color: #730606;
+}
+
+body.overtime section.main .controls {
+	color: #6f2121;
+}
+
+/* Media queries */
+@media screen and (min-width: 700px) {
+	textarea#content {
+		padding: 60px 0px 80px;
+	}
+
+	body.overtime textarea#content {
+		padding: 60px 60px 80px;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	textarea#content {
+		width: 100%;
+	}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Speed</title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	<!-- Initial screen -->
+	<header class="initial">
+		<div class="metadata">
+			<div class="group">
+				<input type="text" name="words" value="100" />
+				<label>words</label>
+			</div>
+			<div class="group">
+				<input type="text" name="minutes" value="5" />
+				<label>minutes</label>
+			</div>
+		</div>
+
+		<div class="controls">
+			<span id="start-button" class="button">&#9658;</span>
+		</div>
+	</header>
+
+	<!-- Writing mode -->
+	<section class="main">
+		<div class="display">
+			<span id="time-left" class="value">0:00</span>
+			<span id="words-status" class="value">0</span>
+		</div>
+
+		<textarea id="content" disabled="true" class="disabled"></textarea>
+
+		<div class="controls">
+			<span id="stop-button" class="button">&#9632;</span>
+			<span id="pause-button" class="button">&#9612;&#9612;</span>
+		</div>
+	</section>
+
+	<script>window.$ = window.jQuery = require("./lib/jquery");</script>
+	<script src="src/speed.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
